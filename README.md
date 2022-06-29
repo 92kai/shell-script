@@ -131,3 +131,34 @@
     November は1～３月ではありません
     December は1～３月ではありません
     ```
+- **入出力とリダイレクト**
+  - ```
+    $  プログラム < 入力ファイル		# データをファイルから入力
+    $  プログラム > 出力ファイル		# 実行結果をファイルへ出力
+    $  プログラム < 入力ファイル > 出力ファイル
+    ```
+- **FTPでファイル送信**
+  - ```
+    #!/bin/bash
+
+    server={FTP HOST}
+    user={FTP USER}
+    password={FTP PASSWORD}
+    file1=test1.txt
+    file2=test2.txt
+
+    ftp -n <<EOF
+        open $server 16910 // ポート指定がある場合
+    user $user $password
+    passive
+    prompt
+    pwd
+    cd {SERVER DIRECTORY}
+        lcd {LOCAL DIRECTORY} // $file1と$file2をmput.shと違うディレクトリに置いた場合、$file1と$file2を置いた場所まで移動する
+    mput $file1 $file2
+    ls
+    bye
+    EOF
+    ```
+    EOFは長い文字列入力の際に使う
+    EOFは、何でもよい（AAAでも可）
