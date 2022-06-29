@@ -116,3 +116,18 @@
         esac
     done
     ```
+    - 実行結果
+    ```
+    January は1月です
+    February は2月です
+    March は3月です
+    April は1～３月ではありません
+    May は1～３月ではありません
+    June は1～３月ではありません
+    July は1～３月ではありません
+    August は1～３月ではありません
+    September は1～３月ではありません
+    October は1～３月ではありません
+    November は1～３月ではありません
+    December は1～３月ではありません
+    ```
