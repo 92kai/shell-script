@@ -22,7 +22,7 @@
   - ${変数名##*.}
     - 拡張子の取得
 - **引数の指定**
-  - ```
+    ```
     #!/bin/sh
 
     echo Script name: $0
@@ -58,7 +58,7 @@
   - =前後にスペースは空けない
 - **繰り返し**
   - while文を使ったループ
-    - ```
+      ```
         #!/bin/sh
 
         i=1
@@ -71,7 +71,7 @@
         exit 0
       ```
   -  for文を使ったループ
-     -  ```
+        ```
         #!/bin/sh
 
         wbc="sugiuchi utsumi yamaguchi sawamura yamai asao maeda imamura noumi"
@@ -97,7 +97,7 @@
     ```
 - **case文**
   - bashにて特定の条件で処理を分岐させたい場合には、if文ではなくcase文を使用することもできます
-  - ```
+    ```
     STRINGS=(January February March April May June July August September October November December)
     for str in ${STRINGS[@]}
     do
@@ -132,13 +132,13 @@
     December は1～３月ではありません
     ```
 - **入出力とリダイレクト**
-  - ```
+    ```
     $  プログラム < 入力ファイル		# データをファイルから入力
     $  プログラム > 出力ファイル		# 実行結果をファイルへ出力
     $  プログラム < 入力ファイル > 出力ファイル
     ```
 - **FTPでファイル送信**
-  - ```
+    ```
     #!/bin/bash
 
     server={FTP HOST}
