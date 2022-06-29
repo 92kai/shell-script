@@ -164,3 +164,15 @@
     EOFは、何でもよい（AAAでも可）
 - **scpコマンドでファイル送信**
   - [scpファイル送信](https://engineer-ninaritai.com/linux-scp/)
+- **iconv**
+  - 文字コード変換
+    `iconv -f 《変換前の文字コード》 -t 《変換後の文字コード》 《変換対象ファイル》`
+  - Shift-JISからUTF8へ変換
+    `iconv -f SJIS -t UTF8 《変換対象ファイル》`
+  - UTF8からShift-JISへ変換
+    `iconv -f UTF8 -t SJIS 《変換対象ファイル》`
+    - iconvでUTF8からShift-JISへ変換するときの注意点
+        grepやsed,trなどのテキスト処理を行うLinuxコマンドは、文字コードがUTF8であることが前提。
+        これらの処理を行う場合は、Shift-JISに変換する前に操作を行う必要がある。
+  -指定できる文字コード一覧
+    `iconv -l`   
