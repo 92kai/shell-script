@@ -59,17 +59,17 @@
 - **繰り返し**
   - while文を使ったループ
     - ```
-    #!/bin/sh
+        #!/bin/sh
 
-    i=1
+        i=1
 
-    while [ $i -le 10 ]; do
-        echo "i=$i"
-        i=$(expr $i + 1)
-    done
+        while [ $i -le 10 ]; do
+            echo "i=$i"
+            i=$(expr $i + 1)
+        done
 
-    exit 0
-    ```
+        exit 0
+      ```
   -  for文を使ったループ
      -  ```
         #!/bin/sh
