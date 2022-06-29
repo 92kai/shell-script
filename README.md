@@ -32,7 +32,6 @@
     echo All arguments: $@
 
     exit 0
-
     ```
     実行結果
     ```
@@ -40,8 +39,8 @@
     Script name: script02.sh
     Arguments: arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9
     All arguments: arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9
-
     ```
+  -  実行時の引数にファイルを渡すことも可能(ファイルの存在チェック)
 - **条件分岐**
   - ```
     if [条件式1]; then
@@ -49,6 +48,37 @@
     elif [条件式2]; then
         処理2
     fi
-
     ```
-- 
+  - 実数の比較
+    - `iflag=$(echo "scale=3;if( $var == 0.5 ) 1 else 0" | bc)`
+    - パイプでbcを付ける  
+- **変数**
+  - `変数名=$(コマンド)`
+    - コマンドの実行結果を引数として渡せる
+  - =前後にスペースは空けない
+- **繰り返し**
+  - while文を使ったループ
+    - ```
+    #!/bin/sh
+
+    i=1
+
+    while [ $i -le 10 ]; do
+        echo "i=$i"
+        i=$(expr $i + 1)
+    done
+
+    exit 0
+    ```
+  -  for文を使ったループ
+     -  ```
+        #!/bin/sh
+
+        wbc="sugiuchi utsumi yamaguchi sawamura yamai asao maeda imamura noumi"
+
+        for player in $wbc; do
+            echo $player
+        done
+
+        exit 0
+        ```
