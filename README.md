@@ -95,3 +95,24 @@
     ```
     0 1 2 3 4 5 
     ```
+- **case文**
+  - bashにて特定の条件で処理を分岐させたい場合には、if文ではなくcase文を使用することもできます
+  - ```
+    STRINGS=(January February March April May June July August September October November December)
+    for str in ${STRINGS[@]}
+    do
+        case $str in
+            January )
+                echo "$str は1月です"
+            ;;
+            February )
+                echo "$str は2月です"
+            ;;
+            March )
+                echo "$str は3月です"
+            ;;
+            * )
+            echo "$str は1～３月ではありません"
+        esac
+    done
+    ```
